@@ -1,8 +1,9 @@
 const validate = function () {
     return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
         let method = descriptor.value
-
+        console.log('1', this)
         descriptor.value = function (newValue: string) {
+            console.log('2', this)
             if (!newValue) {
                 throw Error('非空')
             } else {

@@ -1,7 +1,7 @@
 import 'reflect-metadata'
 import { pathFormat } from '../../util/Path'
 
-const symbolRequestMappingKey = Symbol('router:basic')
+const symbolRequestMappingKey = Symbol.for('router:basic')
 
 // 用于class的注解
 function RequestMapping (path: string): Function {

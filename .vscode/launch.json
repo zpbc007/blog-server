@@ -7,7 +7,13 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "test",
+            "program": "${workspaceFolder}/dist/test/1.reflect.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "app",
             "program": "${workspaceFolder}/dist/app/app.js"
         }
     ]

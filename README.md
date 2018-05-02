@@ -2,9 +2,9 @@
 
 ## 目标
 
-- [ ] 使用typescript
-- [ ] koa响应请求
-- [ ] 使用装饰器实现注解
+- [x] 使用typescript
+- [x] koa响应请求
+- [x] 使用装饰器实现注解
 - [ ] mongo 存储数据
 - [ ] 缓存
 - [ ] 通过id查询markdown
