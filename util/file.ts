@@ -40,7 +40,6 @@ function _readdir (path): Promise<string[]> {
 // 读取文件
 function _readFile (path) {
     return new Promise((resolve, reject) => {
-        console.group('--->')
         console.log(`开始读取文件: ${path}`)
         readFile(path, 'utf8', (err, data) => {
             if (err) {
@@ -48,7 +47,6 @@ function _readFile (path) {
                 throw new Error(`读取文件: ${path} 出错, ${err}`)
             } else {    
                 console.log(`文件读取结束: ${path}`)
-                console.groupEnd()
                 resolve(data)
             }
         })
@@ -161,7 +159,7 @@ async function getFileNames (path) {
 
 // 拷贝目录下的所有文件到目标文件夹
 async function copyDir (sourceDir, targetDir) {
-    
+
     let result: Array<PathName> = []
     const sourceObj = parse(sourceDir)
 
