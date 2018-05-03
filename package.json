@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "ts-node ./config/build.ts & tsc"
+    "noEnvBuild": "ts-node ./config/build.ts & tsc",
+    "build": "npm run noEnvBuild",
+    "start": "npm run noEnvBuild && node ./dist/app/app.js"
   },
   "repository": {
     "type": "git",
