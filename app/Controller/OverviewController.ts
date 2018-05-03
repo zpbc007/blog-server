@@ -1,7 +1,7 @@
 import { Get } from "../Decorators/HttpMethods"
 import { Path } from "../Decorators/Path"
 import { RequestMapping } from "../Decorators/RequestMapping"
-import * as info from '../../assets/info.json'
+import info from '../../assets/info.json'
 
 // 一览页面
 @RequestMapping('overview')

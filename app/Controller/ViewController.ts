@@ -6,7 +6,7 @@ import { join } from 'path'
 import { readFile } from '../../util/file'
 import { getLanguage, highlight} from 'highlight.js'
 // todo 放入数据库中
-import * as idPathMap from '../../assets/idToPath.json'
+import idPathMap from '../../assets/idToPath.json'
 
 const md = require('markdown-it')({
     highlight: function (str, lang) {
