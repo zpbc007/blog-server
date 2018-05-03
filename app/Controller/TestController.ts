@@ -1,5 +1,5 @@
 import { RequestMapping } from "../Decorators/RequestMapping";
-import { Get, Post } from "../Decorators/httpMethods";
+import { Get, Post } from "../Decorators/HttpMethods";
 import { Path } from "../Decorators/path";
 import { Context } from "koa";
 

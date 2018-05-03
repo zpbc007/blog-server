@@ -1,4 +1,4 @@
-import { symbolHttpMethodsKey } from "./Decorators/httpMethods"
+import { symbolHttpMethodsKey } from "./Decorators/HttpMethods"
 import { symbolPathKey } from "./Decorators/path"
 import { symbolRequestMappingKey } from "./Decorators/RequestMapping"
 import { pathFormat } from "../util/Path";

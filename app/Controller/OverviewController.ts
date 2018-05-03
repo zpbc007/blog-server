@@ -1,4 +1,4 @@
-import { Get } from "../Decorators/httpMethods"
+import { Get } from "../Decorators/HttpMethods"
 import { Path } from "../Decorators/path"
 import { RequestMapping } from "../Decorators/RequestMapping"
 import * as info from '../../assets/info.json'
