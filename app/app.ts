@@ -6,7 +6,7 @@ import { ViewController } from './Controller/ViewController'
 import * as path from 'path'
 
 const staticServe = require('koa-static')
-const port = '3000'
+const port = '80'
 const app = new Koa()
 
 console.log('正在启动...\n')
