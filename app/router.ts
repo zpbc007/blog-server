@@ -32,7 +32,7 @@ function registerController (controllerList: Array<any>, prefix: string) {
             }
             router[httpMethod](fullPath, method.bind(ins))
 
-            console.log(` path: ${fullPath}\n method: ${httpMethod}`)
+            console.log(`path: ${fullPath}\nmethod: ${httpMethod}\n`)
         }
     }
 }

@@ -6,9 +6,11 @@ import {
     copyFile,
     mkdir, 
     unlink,
-    rmdir
+    rmdir,
+    access
 } from 'fs'
-import { relative, resolve, parse } from 'path'
+import { relative, resolve, parse, dirname} from 'path'
+import { promisify } from 'util'
 
 enum FileType {
     Dir,
@@ -58,8 +60,7 @@ function _stat (path): Promise<Stats> {
     return new Promise ((resolve, reject) => {
         stat(path, (err, status) => {
             if (err) {
-                reject()
-                throw new Error(`读取文件夹: ${path} 出错, ${err}`)
+                reject(err)
             } else {
                 resolve(status)
             }
@@ -157,15 +158,33 @@ async function getFileNames (path) {
     return result
 }
 
-// 拷贝目录下的所有文件到目标文件夹
-async function copyDir (sourceDir, targetDir) {
-
+/**
+ * @description 拷贝目录下的所有文件到目标文件夹
+ * @param sourceDir 源文件夹
+ * @param targetDir 目标文件夹
+ * @param innerFlag 是否在目标文件夹中建立源文件夹
+ */
+async function copyDir (sourceDir: string, targetDir: string, innerFlag: boolean = true) {
+    
     let result: Array<PathName> = []
     const sourceObj = parse(sourceDir)
-
-    // 建立目标文件夹
-    targetDir = resolve(targetDir, sourceObj.name)
-    await _mkdir(targetDir)
+    
+    // targetDir不存在 建立文件夹
+    try {
+        await _stat(targetDir)
+    } catch (err) {
+        if (err.code === 'ENOENT') {
+            await _mkdirP(targetDir)
+        } else {
+            throw new Error(`targetDir: ${targetDir} 不正确`)
+        }
+    }
+    
+    if (innerFlag) {
+        // 建立目标文件夹
+        targetDir = resolve(targetDir, sourceObj.name)
+        await _mkdir(targetDir)
+    }
 
     // 遍历目录下所有文件
     await traverseDir(sourceDir, result)
@@ -175,7 +194,6 @@ async function copyDir (sourceDir, targetDir) {
         if (obj.type === FileType.File) {
             await _copyFile(obj.absDir, resolve(targetDir, relPath))
         } else if (obj.type === FileType.Dir) {
-            debugger
             await _mkdir(resolve(targetDir, relPath))
         }
     }
@@ -196,9 +214,32 @@ async function clearDir (path: string) {
     }
 }
 
+// mkdir-p
+function _mkdirP (path: string) {
+    const pathDir = dirname(path)
+    return new Promise((resolve, reject) => {
+        mkdir(path, async (err) => {
+            // 创建成功
+            if (!err) {
+                resolve() 
+            } else if (err && err.code === 'ENOENT') { // 目录不存在向上创建
+                // 向上建立父目录
+                await _mkdirP(pathDir)
+                // 建立子目录
+                await _mkdirP(path)
+                resolve()
+            } else {// 出错了
+                reject()
+                throw new Error(`创建文件出错, ${err}`)
+            }
+        })
+    })
+}
+
 export {
     _readFile as readFile,
     getFileNames,
     copyDir,
-    clearDir
+    clearDir,
+    _mkdirP as mkdirP
 }

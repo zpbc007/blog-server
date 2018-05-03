@@ -14,7 +14,7 @@
             "type": "node",
             "request": "launch",
             "name": "test",
-            "program": "${workspaceFolder}/dist/test/1.reflect.js"
+            "program": "${workspaceFolder}/dist/test/util/file.js"
         },
         {
             "type": "node",

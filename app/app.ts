@@ -6,13 +6,13 @@ import { ViewController } from './Controller/ViewController'
 import * as path from 'path'
 
 const staticServe = require('koa-static')
-const port = '80'
+const port = '3000'
 const app = new Koa()
 
 console.log('正在启动...\n')
 
 // 静态资源
-app.use(staticServe(path.resolve(__dirname, './dist')))
+app.use(staticServe(path.resolve(__dirname, '../pages')))
 // 注册Controller
 registerController([TestController, OverviewController, ViewController], 'api')
 // 注册路由
