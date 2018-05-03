@@ -5,7 +5,8 @@ import { Context } from "koa"
 import { join } from 'path'
 import { readFile } from '../../util/file'
 import { getLanguage, highlight} from 'highlight.js'
-import * as idPathMap from '../assets/idToPath.json'
+// todo 放入数据库中
+import * as idPathMap from '../../assets/idToPath.json'
 
 const md = require('markdown-it')({
     highlight: function (str, lang) {
@@ -25,7 +26,7 @@ const md = require('markdown-it')({
 class ViewController {
 
     private async getHtml (fileName: string) {
-        const file = await readFile(join(__dirname, '../docs', fileName))
+        const file = await readFile(join(__dirname, '../../docs', fileName))
         return md.render(file)
     }
 
