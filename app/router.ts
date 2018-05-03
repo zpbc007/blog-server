@@ -1,5 +1,5 @@
 import { symbolHttpMethodsKey } from "./Decorators/HttpMethods"
-import { symbolPathKey } from "./Decorators/path"
+import { symbolPathKey } from "./Decorators/Path"
 import { symbolRequestMappingKey } from "./Decorators/RequestMapping"
 import { pathFormat } from "../util/Path";
 const router = require('koa-router')()
