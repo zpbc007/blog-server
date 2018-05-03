@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": 123
+    "build": "ts-node ./config/build.ts & tsc"
   },
   "repository": {
     "type": "git",
@@ -40,6 +40,7 @@
     "@types/koa-static": "^4.0.0",
     "@types/markdown-it": "0.0.4",
     "@types/node": "^10.0.2",
-    "ts-node": "^6.0.2"
+    "ts-node": "^6.0.2",
+    "typescript": "^2.8.3"
   }
 }

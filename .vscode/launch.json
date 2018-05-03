@@ -7,6 +7,12 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "config",
+            "program": "${workspaceFolder}/dist/config/build.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "test",
             "program": "${workspaceFolder}/dist/test/1.reflect.js"
         },
