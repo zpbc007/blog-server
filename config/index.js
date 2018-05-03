@@ -6,7 +6,7 @@ const exec = promisify(require('child_process').exec)
 
 // 项目根目录
 const ServerDir = resolve(__dirname, '../'),
-    FrontDir = resolve(ServerDir, '../blog-front')
+    FrontDir = resolve(ServerDir, '../blog-client')
 
 
 // 编译

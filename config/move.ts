@@ -4,7 +4,7 @@ import { promisify } from 'util'
 import { exec } from 'child_process'
 
 const _exec = promisify(exec),
-    frontDir = resolve(__dirname, '../../blog-front')
+    frontDir = resolve(__dirname, '../../blog-client')
 
 // move client code to dist
 async function move () {

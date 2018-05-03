@@ -8,7 +8,6 @@
     "noEnvBuild": "ts-node ./config/build.ts & tsc",
     "build": "npm run noEnvBuild",
     "start": "npm run noEnvBuild && node ./dist/app/app.js",
-    "buildFront": "npm start ../blog-front",
     "move": "ts-node ./config/move.ts"
   },
   "repository": {
