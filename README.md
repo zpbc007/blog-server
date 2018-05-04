@@ -5,8 +5,16 @@
 - [x] 使用typescript
 - [x] koa响应请求
 - [x] 使用装饰器实现注解
+- [x] 使用pm2管理node
+- [x] 使用nginx反向代理
 - [ ] mongo 存储数据
 - [ ] 缓存
 - [ ] 通过id查询markdown
-- [ ] 通过showdown将markdown转为html
+- [x] 通过markdown-it将markdown转为html
 - [ ] graphQl
+
+## 问题
+
+### docker无法使用
+
+server中需要build client并将build后的文件移动到server中
