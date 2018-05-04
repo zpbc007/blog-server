@@ -19,7 +19,6 @@ async function build () {
     console.log('复制markdown完成')
 }
 
-console.group('开始编译server')
+console.log('开始编译server')
 build()
 console.log('server编译完成')
-console.groupEnd()
