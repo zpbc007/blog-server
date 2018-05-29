@@ -3,18 +3,13 @@ import { Get, Post } from "../Decorators/HttpMethods";
 import { Path } from "../Decorators/Path";
 import { Context } from "koa";
 
+// 测试页面
 @RequestMapping('test')
 class TestController {
     @Get
-    @Path('method1')
+    @Path('flowData')
     method1 (ctx: Context) {
         ctx.body = 'method1'
-    }
-
-    @Post
-    @Path('method2')
-    method2 (ctx: Context) {
-        ctx.body = 'method2'
     }
 }
 

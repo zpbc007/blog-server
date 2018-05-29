@@ -7,7 +7,7 @@
 - [x] 使用装饰器实现注解
 - [x] 使用pm2管理node
 - [x] 使用nginx反向代理
-- [ ] mongo 存储数据
+- [ ] postgres 存储数据
 - [ ] 缓存
 - [x] 通过id查询markdown
 - [x] 通过markdown-it将markdown转为html

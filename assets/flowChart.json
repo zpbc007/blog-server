@@ -1,0 +1,80 @@
+{
+    "laneList": [{
+            "index": 0,
+            "id": "0",
+            "name": "申请部门",
+            "data": {}
+        },
+        {
+            "index": 1,
+            "id": "1",
+            "name": "采购部",
+            "data": {}
+        },
+        {
+            "index": 2,
+            "id": "2",
+            "name": "财务部",
+            "data": {}
+        }
+    ],
+    "nodeList": [{
+            "index": 0,
+            "id": "0",
+            "processId": "0",
+            "name": "出口清单",
+            "type": "start",
+            "data": {}
+        },
+        {
+            "index": 1,
+            "id": "1",
+            "processId": "0",
+            "name": "仓库入库",
+            "type": "end",
+            "data": {}
+        },
+        {
+            "index": 0,
+            "id": "2",
+            "processId": "1",
+            "name": "进口清单",
+            "data": {}
+        },
+        {
+            "index": 0,
+            "id": "3",
+            "processId": "1",
+            "name": "节点1-1",
+            "data": {}
+        },
+        {
+            "index": 0,
+            "id": "4",
+            "processId": "2",
+            "name": "节点2-0",
+            "data": {}
+        }
+    ],
+    "relList": [{
+            "from": "0",
+            "to": "1",
+            "data": {}
+        },
+        {
+            "from": "1",
+            "to": "3",
+            "data": {}
+        },
+        {
+            "from": "3",
+            "to": "2",
+            "data": {}
+        },
+        {
+            "from": "3",
+            "to": "4",
+            "data": {}
+        }
+    ]
+}
