@@ -67,5 +67,21 @@
         "title": "rvm常用命令",
         "content": "rvm常用命令",
         "date": "2018-7-5"
+    }, {
+        "id": "15",
+        "title": "rails常用命令",
+        "content": "rails常用命令",
+        "date": "2018-7-5"
+    }, {
+        "id": "16",
+        "title": "bundle常用命令",
+        "content": "bundle常用命令",
+        "date": "2018-7-5"
+    }, {
+        "id": "17",
+        "title": "nginx使用",
+        "content": "nginx使用",
+        "date": "2018-7-5"
     }
+
 ]
