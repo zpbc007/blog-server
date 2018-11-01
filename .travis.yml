@@ -1,6 +1,6 @@
 sudo: required
 addons:
-  chrome: stable # 在travis上安装浏览器 用于测试
+  chrome: stable # 在travis上安装浏览器 用于测试
 language: node_js # 指定语言
 os: osx # 指定环境 （用于安装浏览器）
 node_js: 
