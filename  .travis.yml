@@ -1,0 +1,16 @@
+sudo: required
+addons:
+  chrome: stable # 在travis上安装浏览器 用于测试
+language: node_js # 指定语言
+os: osx # 指定环境 （用于安装浏览器）
+node_js: 
+  - "10.11.0" # 指定node版本
+install: npm install # 安装
+script: npm run build # 运行测试脚本
+
+notifications: # 通知配置
+  email:
+    recipients: # 通知邮箱
+      - 719197352@qq.com
+    on_success: always
+    on_failure: always
