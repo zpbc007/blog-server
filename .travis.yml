@@ -7,7 +7,6 @@ node_js:
   - "10.11.0" # 指定node版本
 install: npm install # 安装
 script: npm run build # 运行测试脚本
-
 notifications: # 通知配置
   email:
     recipients: # 通知邮箱
