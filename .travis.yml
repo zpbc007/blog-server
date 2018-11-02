@@ -10,7 +10,7 @@ branchs:
   only:
   - master
 install: npm install
-script: npm run build
+script: npm run test
 notifications:
   email:
     recipients:
