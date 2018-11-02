@@ -1,15 +1,25 @@
 sudo: required
 addons:
-  chrome: stable # 在travis上安装浏览器 用于测试
-language: node_js # 指定语言
-os: osx # 指定环境 （用于安装浏览器）
-node_js: 
-  - "10.11.0" # 指定node版本
-install: npm install # 安装
-script: npm run build # 运行测试脚本
-notifications: # 通知配置
+  chrome: stable
+  ssh_known_hosts: 140.143.235.188
+language: node_js
+os: osx
+node_js:
+- 10.11.0
+branchs:
+  only:
+  - master
+install: npm install
+script: npm run build
+notifications:
   email:
-    recipients: # 通知邮箱
-      - 719197352@qq.com
+    recipients:
+    - 719197352@qq.com
     on_success: always
     on_failure: always
+before_install:
+- openssl aes-256-cbc -K $encrypted_9b1c931e4063_key -iv $encrypted_9b1c931e4063_iv
+  -in id_rsa.enc -out ~\/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+after_success:
+  - ssh ubuntu@140.143.235.188 "./your-shell-script"
