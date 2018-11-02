@@ -22,4 +22,4 @@ before_install:
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 after_success:
-  - ssh ubuntu@140.143.235.188 "./build.sh"
+  - ssh ubuntu@140.143.235.188 < ./build.sh
