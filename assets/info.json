@@ -82,6 +82,10 @@
         "title": "nginx使用",
         "content": "nginx使用",
         "date": "2018-7-5"
+    }, {
+        "id": "27",
+        "title": "travis自动部署",
+        "content": "使用travis自动部署执行测试并部署",
+        "date": "2018-11-1"
     }
-
 ]
