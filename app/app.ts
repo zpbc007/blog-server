@@ -11,8 +11,10 @@ const app = new Koa()
 
 console.log('正在启动...\n')
 
-// 静态资源
+// 静态页面
 app.use(staticServe(path.resolve(__dirname, '../pages')))
+// 图片
+app.use(staticServe(path.resolve(__dirname, '../../image')))
 // 注册Controller
 registerController([TestController, OverviewController, ViewController], 'api')
 // 注册路由
