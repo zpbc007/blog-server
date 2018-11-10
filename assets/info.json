@@ -87,5 +87,10 @@
         "title": "travis自动部署",
         "content": "使用travis自动部署执行测试并部署",
         "date": "2018-11-1"
+    }, {
+        "id": "28",
+        "title": "理解原型链",
+        "content": "分析js中的prototype与__proto__属性理解原型链",
+        "date": "2018-11-10"
     }
 ]
