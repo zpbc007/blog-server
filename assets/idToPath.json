@@ -18,5 +18,6 @@
     "17": "17.nginx使用.md",
     "27": "27.travis.md",
     "28": "28.原型链.md",
-    "29": "29.tapable.md"
+    "29": "29.tapable.md",
+    "30": "30.offsetParent计算方式.md"
 }
