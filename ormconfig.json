@@ -1,0 +1,10 @@
+{
+    "type": "postgres",
+    "host": "140.143.235.188",
+    "port": "5432",
+    "username": "blog_admin",
+    "password": "Brf5835&",
+    "database": "blog_db",
+    "entities": ["src/**/**.entity(.ts)"],
+    "syncronize": true
+}
