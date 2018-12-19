@@ -4,4 +4,7 @@ export const config = {
         secretKey: '_my_private_jwt_key',
         expiresIn: 3600,
     },
+    bcrypt: {
+        saltRounds: 10,
+    },
 };

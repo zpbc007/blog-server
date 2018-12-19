@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ArticlesModule } from './articles/articles.module';
-import { TagsModule } from './tags/tags.module';
-import { ImgsModule } from './imgs/imgs.module';
-import { AuthModule } from './auth/auth.module';
+import { AuthModule } from './module/auth/auth.module';
+import { UsersModule } from './module/users/users.module';
+import { ArticlesModule } from './module/articles/articles.module';
+import { TagsModule } from './module/tags/tags.module';
+import { ImgsModule } from './module/imgs/imgs.module';
 
 @Module({
   imports: [

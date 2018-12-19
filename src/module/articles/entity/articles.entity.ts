@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, VersionColumn, ManyToOne, Column, ManyToMany } from 'typeorm';
-import { Users } from 'src/users/entity/users.entity';
-import { Tags } from 'src/tags/entity/tags.entity';
+import { Users } from 'src/module/users/entity/users.entity';
+import { Tags } from 'src/module/tags/entity/tags.entity';
 
 @Entity()
 export class Articles {
