@@ -1,5 +1,6 @@
 import { IsString, Length } from 'class-validator';
 
+// 用户登录
 export class UserLoginDto {
     // 密码
     @IsString({
