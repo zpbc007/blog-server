@@ -4,6 +4,7 @@ import { UserLoginDto } from './dto/users.dto';
 import { AuthService } from '../auth/auth.service';
 import { UsersService } from './users.service';
 import { Result } from 'src/common/dto/result.dto';
+import { ValidationExceptionFactory } from 'src/exception/validation.exception';
 
 @Controller('users')
 export class UsersController {
@@ -22,7 +23,7 @@ export class UsersController {
     }
 
     @Post('/login')
-    @UsePipes(new ValidationPipe({}))
+    @UsePipes(new ValidationPipe({ exceptionFactory: ValidationExceptionFactory }))
     async login(@Body() userLoginDto: UserLoginDto) {
         const { msg, result, user } = await this.usersService.loginValidate(userLoginDto);
 
