@@ -41,6 +41,12 @@ export class Users {
     enable: boolean;
 
     /**
+     * 管理员权限
+     */
+    @Column()
+    super: boolean;
+
+    /**
      * 文章列表
      */
     @OneToMany(type => Articles, article => article.create_user)

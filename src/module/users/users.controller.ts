@@ -40,8 +40,8 @@ export class UsersController {
     /**
      * 新建用户
      */
-    // @UseGuards(AuthGuard())
-    // @UsePipes(ValidationPipe)
+    @UseGuards(AuthGuard())
+    @UsePipes(ValidationPipe)
     @Post('/')
     async addUser(@Body() userModifyDto: UserModifyDto) {
         if (userModifyDto.password !== userModifyDto.confirm_password) {
