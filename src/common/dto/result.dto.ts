@@ -1,7 +1,7 @@
 type MsgType = 'success' | 'info' | 'warn' | 'error';
 
 export class Result<T = any> {
-    constructor(msg: string, data: T, msgType: MsgType = 'success') {
+    constructor(msg: string, data?: T, msgType: MsgType = 'success') {
         this.msg = msg;
         this.data = data;
         this.msgType = msgType;

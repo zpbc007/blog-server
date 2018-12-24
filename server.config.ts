@@ -7,4 +7,7 @@ export const config = {
     bcrypt: {
         saltRounds: 10,
     },
+    user: {
+        defaultPass: '123456',
+    },
 };
