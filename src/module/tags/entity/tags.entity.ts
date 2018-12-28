@@ -19,6 +19,15 @@ export class Tags {
     @Column()
     desc: string;
 
-    @ManyToMany(type => Articles)
+    /**
+     * 对应的文章列表
+     */
     article_list: Articles[];
+}
+
+export function createTagList(idList: number[]) {
+    if (!idList || idList.length === 0) {
+        return [];
+    }
+    return idList.map(id => ({ id } as Tags));
 }
