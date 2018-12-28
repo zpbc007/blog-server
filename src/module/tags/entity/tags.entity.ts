@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 import { Articles } from 'src/module/articles/entity/articles.entity';
+import { Color } from 'src/common/types/color.enum';
 
 @Entity()
 export class Tags {
@@ -18,6 +19,15 @@ export class Tags {
      */
     @Column()
     desc: string;
+
+    /**
+     * 颜色
+     */
+    @Column({
+        type: 'enum',
+        enum: Color,
+    })
+    color: Color;
 
     /**
      * 对应的文章列表

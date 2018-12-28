@@ -6,6 +6,7 @@ import { TagModifyDto } from '../tags/dto/tag_modify.dto';
 import { TagsService } from '../tags/tags.service';
 import { ArticleModifyDto } from '../articles/dto/article_modify.dto';
 import { Users } from 'dist/src/module/users/entity/users.entity';
+import { Color } from 'src/common/types/color.enum';
 
 @Injectable()
 export class MockService {
@@ -58,10 +59,12 @@ export class MockService {
         const tag1 = new TagModifyDto();
         tag1.desc = '测试标签描述1';
         tag1.name = '标签1';
+        tag1.color = Color.blue;
 
         const tag2 = new TagModifyDto();
         tag2.desc = '测试标签描述2';
         tag2.name = '标签2';
+        tag2.color = Color.cyan;
 
         const [{ data: tagId1 }, { data: tagId2 }] = await Promise.all([this.tagService.addTag(tag1), this.tagService.addTag(tag2)]);
 
