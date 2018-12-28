@@ -5,6 +5,7 @@ import { UsersModule } from './module/users/users.module';
 import { ArticlesModule } from './module/articles/articles.module';
 import { TagsModule } from './module/tags/tags.module';
 import { ImgsModule } from './module/imgs/imgs.module';
+import { MockModule } from './module/mock/mock.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { ImgsModule } from './module/imgs/imgs.module';
     ArticlesModule,
     TagsModule,
     ImgsModule,
+    MockModule,
   ],
 })
 export class AppModule {}
