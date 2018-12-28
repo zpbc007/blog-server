@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, VersionColumn, ManyToOne, Column, ManyToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, VersionColumn, ManyToOne, Column, ManyToMany, JoinTable } from 'typeorm';
 import { Users } from 'src/module/users/entity/users.entity';
 import { Tags } from 'src/module/tags/entity/tags.entity';
 
@@ -21,16 +21,17 @@ export class Articles {
     desc: string;
 
     /**
-     * 文章所在路径
-     */
-    @Column()
-    path: string;
-
-    /**
      * 创建者
      */
     @ManyToOne(type => Users, user => user.article_list)
     create_user: Users;
+
+    /**
+     * 标签
+     */
+    @ManyToMany(type => Tags)
+    @JoinTable()
+    tag_list?: Tags[];
 
     /**
      * 版本
@@ -43,7 +44,4 @@ export class Articles {
 
     @UpdateDateColumn()
     update_at: Date;
-
-    @ManyToMany(type => Tags)
-    tag_list: Tags[];
 }
