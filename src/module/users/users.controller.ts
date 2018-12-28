@@ -18,8 +18,8 @@ import { AuthService } from '../auth/auth.service';
 import { UsersService } from './users.service';
 import { Result } from 'src/common/dto/result.dto';
 import { UserModifyDto } from './dto/user_modify.dto';
-import { ServiceResult } from './interface/service_result.interface';
 import { UserChangePasswordDto } from './dto/user_changePass.dto';
+import { ServiceResult } from 'src/common/interface/service_result.interface';
 
 @Controller('users')
 export class UsersController {
@@ -115,9 +115,7 @@ export class UsersController {
     @UseGuards(AuthGuard())
     @UsePipes(ValidationPipe)
     @Delete('/:id')
-    async delUser(@Param() params) {
-        const { id } = params;
-
+    async delUser(@Param('id') id) {
         const { result, msg } = await this.usersService.delUser(id);
 
         if (result) {

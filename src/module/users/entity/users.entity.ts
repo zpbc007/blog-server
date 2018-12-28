@@ -23,16 +23,19 @@ export class Users {
     /**
      * 头像
      */
-    @Column()
-    avatar: string;
+    @Column({
+        nullable: true,
+    })
+    avatar?: string;
 
     /**
      * 昵称
      */
     @Column({
         length: 30,
+        nullable: true,
     })
-    nickname: string;
+    nickname?: string;
 
     /**
      * 是否启用
@@ -50,5 +53,5 @@ export class Users {
      * 文章列表
      */
     @OneToMany(type => Articles, article => article.create_user)
-    article_list: Articles[];
+    article_list?: Articles[];
 }

@@ -5,7 +5,7 @@ import { Users } from './entity/users.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { compareSync, hashSync } from 'bcrypt';
 import { UserModifyDto } from './dto/user_modify.dto';
-import { createServiceResult, ServiceResult } from './interface/service_result.interface';
+import { createServiceResult, ServiceResult } from 'src/common/interface/service_result.interface';
 import { UserChangePasswordDto } from './dto/user_changePass.dto';
 import { config } from 'server.config';
 
@@ -98,7 +98,7 @@ export class UsersService {
             .execute();
 
         if (result && result.identifiers.length > 0) {
-            return createServiceResult(true, '创建成功', result.identifiers[0]);
+            return createServiceResult(true, '创建成功', result.identifiers[0].id);
         } else {
             return createServiceResult(false, '创建失败');
         }
