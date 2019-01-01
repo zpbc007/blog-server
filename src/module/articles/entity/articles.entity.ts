@@ -23,15 +23,15 @@ export class Articles {
     /**
      * 创建者
      */
-    @ManyToOne(type => Users, user => user.article_list)
-    create_user: Users;
+    @ManyToOne(type => Users, user => user.articleList)
+    createUser: Users;
 
     /**
      * 标签
      */
     @ManyToMany(type => Tags)
     @JoinTable()
-    tag_list?: Tags[];
+    tagList?: Tags[];
 
     /**
      * 版本
@@ -40,8 +40,8 @@ export class Articles {
     version: number;
 
     @CreateDateColumn()
-    create_at: Date;
+    createAt: Date;
 
     @UpdateDateColumn()
-    update_at: Date;
+    updateAt: Date;
 }

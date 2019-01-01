@@ -9,6 +9,7 @@ import {
     ValidationPipe,
     Body,
     InternalServerErrorException,
+    BadRequestException,
 } from '@nestjs/common';
 import { ArticlesService } from './articles.service';
 import { AuthGuard } from '@nestjs/passport';
@@ -25,8 +26,12 @@ export class ArticlesController {
      * 获取文章列表
      */
     @Get('/')
-    async getArticleList(@Query('offset') offset: number = 0, @Query('size') size = 10) {
-        return this.articlesService.getArticleList(offset, size);
+    async getArticleList(@Query('pageNo') pageNo: number = 1, @Query('pageSize') pageSize = 10) {
+        if (pageNo < 0 || pageSize < 0) {
+            throw new BadRequestException(`请求的分页参数有误`);
+        }
+
+        return this.articlesService.getArticleList(pageNo, pageSize);
     }
 
     /**

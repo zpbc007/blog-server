@@ -52,6 +52,6 @@ export class Users {
     /**
      * 文章列表
      */
-    @OneToMany(type => Articles, article => article.create_user)
-    article_list?: Articles[];
+    @OneToMany(type => Articles, article => article.createUser)
+    articleList?: Articles[];
 }

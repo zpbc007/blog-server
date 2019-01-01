@@ -26,13 +26,13 @@ export class ArticlesService {
      * @param offset 偏移
      * @param size 页长
      */
-    async getArticleList(offset: number, size: number) {
+    async getArticleList(pageNo: number, pageSize: number) {
         return await this.articleRepo
             .createQueryBuilder('article')
-            .leftJoinAndSelect('article.tag_list', 'tag_list')
-            .skip(offset)
-            .take(size)
-            .orderBy('article.create_at', 'ASC')
+            .leftJoinAndSelect('article.tagList', 'tagList')
+            .skip((pageNo - 1) * pageSize)
+            .take(pageSize)
+            .orderBy('article.createAt', 'ASC')
             .getMany();
     }
 
@@ -44,8 +44,8 @@ export class ArticlesService {
         const article = new Articles();
         article.title = title;
         article.desc = desc;
-        article.create_user = user;
-        article.tag_list = createTagList(tag_list);
+        article.createUser = user;
+        article.tagList = createTagList(tag_list);
         const result = await this.articleRepo.save(article);
 
         // 文件路径

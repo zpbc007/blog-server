@@ -6,6 +6,7 @@
     "password": "Brf5835&",
     "database": "blog_db",
     "entities": ["./src/module/**/entity/**.entity.ts"],
-    "logging": true,
-    "_synchronize": true
+    "logging": "error",
+    "synchronize": true,
+    "dropSchema": true
 }
